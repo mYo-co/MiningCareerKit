@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#061b17" />
+  <meta name="description" content="Explore career pathways across South Africa's gold, platinum and diamond mining sectors. Discover roles, skills, qualifications, training routes and job-search resources with the mYo Mining Career Kit." />
+  <title>mYo | The Mining Career Kit — South Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #f8f7f1;
+      --muted: #b8c5bf;
+      --muted-dark: #67736e;
+      --bg: #061b17;
+      --bg-2: #0a2721;
+      --panel: #102e27;
+      --panel-2: #14372f;
+      --gold: #f5c84c;
+      --gold-light: #ffe59a;
+      --line: rgba(255,255,255,.12);
+      --white: #fffdf7;
+      --shadow: 0 22px 70px rgba(0,0,0,.28);
+      --radius: 22px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'DM Sans', Arial, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--gold-light); font-size: 11px; line-height: 1.3; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .eyebrow:before { content: ''; width: 23px; height: 2px; background: var(--gold); display: inline-block; }
+    .section { padding: 92px 0; }
+    .section-heading { max-width: 720px; margin-bottom: 38px; }
+    h1,h2,h3,p { margin-top: 0; }
+    h1,h2,h3 { font-family: 'Manrope', 'DM Sans', sans-serif; letter-spacing: -.045em; }
+    h1 { font-size: clamp(42px, 5.7vw, 70px); line-height: .99; margin: 19px 0 22px; font-weight: 800; }
+    h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.08; margin: 15px 0 15px; font-weight: 800; }
+    h3 { font-size: 20px; line-height: 1.2; margin-bottom: 10px; font-weight: 800; }
+    .gold-text { color: var(--gold); }
+    .lead { color: #d0d9d4; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.65; max-width: 650px; }
+    .subcopy { color: var(--muted); max-width: 650px; font-size: 16px; }
+    .topline { background: #d7a92c; color: #15221d; text-align: center; padding: 8px 16px; font-size: 10px; letter-spacing: .16em; font-weight: 900; text-transform: uppercase; }
+    header { position: relative; z-index: 10; border-bottom: 1px solid rgba(255,255,255,.08); background: rgba(6,27,23,.93); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; font-family: 'Manrope', sans-serif; font-size: 32px; line-height: 1; font-weight: 800; letter-spacing: -.09em; }
+    .brand span { position: relative; }
+    .brand span:after { content: ''; height: 4px; width: 35px; position: absolute; right: 0; bottom: -6px; background: var(--gold); border-radius: 99px; transform: rotate(-13deg); }
+    .nav-links { display: flex; align-items: center; gap: 27px; color: #d1dbd5; font-size: 13px; font-weight: 700; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid transparent; border-radius: 999px; min-height: 53px; padding: 0 23px; font-weight: 900; font-size: 13px; letter-spacing: .01em; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, #ffe99f 0%, #f2c347 48%, #dca52b 100%); color: #14231d; box-shadow: 0 10px 30px rgba(228,178,54,.19); }
+    .btn-primary:hover { box-shadow: 0 14px 36px rgba(228,178,54,.3); }
+    .btn-secondary { color: var(--ink); border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.035); }
+    .btn-secondary:hover { background: rgba(255,255,255,.09); }
+    .btn-arrow { font-size: 18px; line-height: 0; }
+    .hero-image { width: 100%; margin: 0; padding: 0; line-height: 0; overflow: hidden; background: #061b17; }
+    .hero-image img { display: block; width: 100%; height: auto; max-width: none; margin: 0; border: 0; border-radius: 0; }
+    .check { display: inline-flex; justify-content: center; align-items: center; flex: 0 0 18px; width: 18px; height: 18px; border-radius: 50%; background: rgba(245,200,76,.14); color: var(--gold-light); font-size: 11px; font-weight: 900; }
+    .stat-strip { background: #0d2a23; border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.08); }
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); }
+    .stat { padding: 23px 28px; display: flex; align-items: center; gap: 14px; border-right: 1px solid var(--line); }
+    .stat:last-child { border: 0; }
+    .stat-num { font-family: 'Manrope',sans-serif; color: var(--gold); font-size: 29px; line-height: 1; font-weight: 800; }
+    .stat-label { color: #d0d9d4; font-size: 12px; line-height: 1.35; font-weight: 700; }
+    .intro-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: start; }
+    .intro-aside { border-left: 2px solid var(--gold); padding: 8px 0 8px 22px; color: #c8d2cc; font-size: 15px; }
+    .intro-aside strong { color: var(--white); }
+    .areas { background: #f4f2e9; color: #13251f; }
+    .areas .eyebrow { color: #8b6717; }
+    .areas .eyebrow:before { background: #c79b2d; }
+    .areas .subcopy { color: #58655f; }
+    .area-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .area-card { position: relative; padding: 25px 23px 23px; min-height: 215px; border: 1px solid #dedfd5; background: rgba(255,255,255,.74); border-radius: 17px; transition: transform .2s ease, box-shadow .2s ease; }
+    .area-card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(20,42,32,.08); }
+    .area-icon { display: flex; align-items: center; justify-content: center; width: 43px; height: 43px; border-radius: 13px; background: #173c30; color: var(--gold-light); margin-bottom: 20px; }
+    .area-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .area-card h3 { color: #172c24; font-size: 17px; margin-bottom: 9px; }
+    .area-card p { color: #68746d; font-size: 13px; margin: 0; line-height: 1.6; }
+    .guides { background: linear-gradient(180deg, #09251e 0%, #071e19 100%); }
+    .guide-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 17px; }
+    .guide-card { overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.025)); border: 1px solid rgba(255,255,255,.13); border-radius: 18px; min-height: 250px; position: relative; padding: 29px 25px; }
+    .guide-card:after { content: ''; position: absolute; right: -32px; bottom: -52px; width: 150px; height: 150px; border-radius: 50%; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 0 0 17px rgba(255,255,255,.025), 0 0 0 36px rgba(255,255,255,.02); }
+    .guide-number { color: var(--gold); font-size: 11px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+    .guide-card h3 { margin-top: 35px; font-size: 25px; }
+    .guide-card p { color: #bac7bf; max-width: 260px; font-size: 13px; }
+    .guide-foot { position: absolute; bottom: 22px; left: 25px; color: var(--gold-light); font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .guide-gold { background: radial-gradient(ellipse at 95% 100%, rgba(218,159,44,.28), transparent 50%), linear-gradient(145deg, #392a12, #15251e 80%); }
+    .guide-platinum { background: radial-gradient(ellipse at 95% 100%, rgba(165,185,198,.27), transparent 50%), linear-gradient(145deg, #293740, #15251e 80%); }
+    .guide-diamond { background: radial-gradient(ellipse at 95% 100%, rgba(54,150,210,.26), transparent 50%), linear-gradient(145deg, #102f48, #14251f 80%); }
+    .inside { background: #f5f4ee; color: #13251f; }
+    .inside .eyebrow { color: #8b6717; }
+    .inside .eyebrow:before { background: #c79b2d; }
+    .inside .subcopy { color: #58655f; }
+    .inside-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .inside-card { padding: 23px; border-radius: 16px; border: 1px solid #e0e2d9; background: white; }
+    .inside-card .mini { color: #99731b; font-size: 10px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+    .inside-card h3 { color: #183127; font-size: 17px; margin: 10px 0 8px; }
+    .inside-card p { color: #66736c; font-size: 13px; margin: 0; }
+    .steps { background: #0b2922; }
+    .step-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 42px; }
+    .step { border-top: 1px solid rgba(245,200,76,.4); padding: 22px 20px 0 0; margin-right: 18px; position: relative; }
+    .step:last-child { margin-right: 0; }
+    .step-num { position: absolute; top: -15px; left: 0; width: 29px; height: 29px; display: grid; place-items: center; border-radius: 50%; background: var(--gold); color: #14231d; font-size: 11px; font-weight: 900; }
+    .step h3 { font-size: 16px; margin: 18px 0 7px; }
+    .step p { color: #b9c6be; font-size: 12px; margin: 0; }
+    .audience { background: #eae9df; color: #13251f; }
+    .audience .eyebrow { color: #8b6717; }
+    .audience .eyebrow:before { background: #c79b2d; }
+    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .audience-item { display: flex; gap: 14px; align-items: flex-start; background: rgba(255,255,255,.7); border: 1px solid #dbddd2; padding: 20px; border-radius: 15px; }
+    .audience-item .check { background: #173c30; color: var(--gold-light); margin-top: 2px; }
+    .audience-item strong { display: block; margin-bottom: 4px; font-size: 14px; }
+    .audience-item span:last-child { color: #647068; font-size: 12px; line-height: 1.5; }
+    .resources { background: #071e19; }
+    .resource-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .resource-link { display: flex; flex-direction: column; justify-content: space-between; min-height: 132px; padding: 19px; border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.035); border-radius: 14px; transition: background .2s ease, border .2s ease; }
+    .resource-link:hover { background: rgba(255,255,255,.08); border-color: rgba(245,200,76,.5); }
+    .resource-link strong { font-size: 13px; }
+    .resource-link span { color: #aebdb4; font-size: 11px; }
+    .resource-link b { color: var(--gold); font-size: 20px; align-self: flex-end; }
+    .offer { padding: 94px 0; background: radial-gradient(ellipse at 50% 100%, rgba(214,154,38,.15), transparent 45%), linear-gradient(130deg, #0c3026, #061b17 80%); }
+    .offer-card { display: grid; grid-template-columns: 1fr .85fr; gap: 46px; align-items: center; padding: clamp(25px,5vw,54px); border: 1px solid rgba(245,200,76,.35); border-radius: 26px; background: linear-gradient(135deg, rgba(255,255,255,.085), rgba(255,255,255,.025)); box-shadow: var(--shadow); }
+    .offer-card > .offer-art { grid-column: 1 / -1; display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 18px 48px rgba(0,0,0,.3); }
+    .whats-inside { grid-column: 1 / -1; }
+    .whats-inside h2 { margin: 0 0 22px; font-size: clamp(27px, 3vw, 38px); }
+    .whats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px 14px; }
+    .whats-item { display: flex; align-items: flex-start; gap: 12px; padding: 15px 16px; min-height: 66px; border: 1px solid rgba(255,255,255,.11); border-radius: 13px; background: rgba(255,255,255,.045); color: #e1e8e2; font-size: 13px; line-height: 1.45; }
+    .whats-item .check { margin-top: 1px; }
+    .offer-panel { grid-column: 1 / -1; max-width: 520px; width: 100%; justify-self: center; }
+    .offer-points { display: grid; gap: 12px; margin: 25px 0; }
+    .offer-point { display: flex; align-items: flex-start; gap: 11px; color: #d5ded8; font-size: 13px; }
+    .offer-panel { padding: 28px; background: #f4f1e7; color: #15271f; border-radius: 18px; text-align: center; }
+    .offer-panel .tag { color: #96701a; font-size: 10px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+    .offer-panel h3 { font-size: 26px; margin: 11px 0 5px; }
+    .offer-panel p { color: #68736c; font-size: 12px; }
+    .offer-panel .btn { width: 100%; margin: 12px 0 12px; }
+    .secure-note { color: #6e7972; font-size: 10px; }
+    .faq { background: #f5f3eb; color: #172820; }
+    .faq .eyebrow { color: #8b6717; }
+    .faq .eyebrow:before { background: #c79b2d; }
+    .faq-list { max-width: 850px; }
+    details { border-bottom: 1px solid #d8dcd2; padding: 18px 0; }
+    summary { cursor: pointer; list-style: none; position: relative; padding-right: 38px; font-size: 15px; font-weight: 800; }
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: '+'; position: absolute; right: 5px; top: -5px; color: #9b741b; font-size: 25px; font-weight: 500; }
+    details[open] summary:after { content: '−'; }
+    details p { max-width: 760px; color: #637068; font-size: 13px; padding: 13px 34px 0 0; margin-bottom: 0; }
+    .disclaimer { padding: 24px 0; background: #e7e7dc; color: #68736c; font-size: 10px; line-height: 1.6; }
+    footer { background: #04140f; padding: 34px 0 92px; color: #a7b5ac; font-size: 11px; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { color: white; font-size: 25px; font-family: 'Manrope',sans-serif; font-weight: 800; letter-spacing: -.09em; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a:hover { color: var(--gold-light); }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr .84fr; gap: 28px; }
+      .nav-links { gap: 15px; }
+      .nav-links a:nth-child(3) { display: none; }
+      .intro-grid { gap: 38px; }
+      .area-grid, .inside-grid { grid-template-columns: repeat(2,1fr); }
+      .resource-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 34px, var(--max)); }
+      .topline { font-size: 9px; letter-spacing: .11em; }
+      .nav { min-height: 66px; }
+      .brand { font-size: 29px; }
+      .nav-links { display: none; }
+      .nav .btn { min-height: 43px; padding: 0 15px; font-size: 11px; }
+      .hero { padding: 49px 0 52px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 31px; }
+      h1 { font-size: clamp(42px, 12vw, 58px); }
+      .lead { font-size: 16px; }
+      .hero-art { width: 91%; margin: 0 auto; }
+      .art-caption { right: -12px; bottom: 12px; max-width: 175px; padding: 10px 12px; font-size: 10px; }
+      .art-caption strong { font-size: 11px; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .hero-proof { gap: 11px 16px; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { padding: 15px 4px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .stat:last-child { border-bottom: 0; }
+      .stat-num { font-size: 25px; min-width: 44px; }
+      .section { padding: 66px 0; }
+      .intro-grid { grid-template-columns: 1fr; gap: 18px; }
+      .intro-aside { margin-top: 3px; }
+      .area-grid, .guide-grid, .inside-grid { grid-template-columns: 1fr; }
+      .area-card { min-height: 0; padding: 21px; }
+      .area-icon { margin-bottom: 14px; }
+      .guide-card { min-height: 215px; }
+      .guide-card h3 { margin-top: 24px; }
+      .step-grid { grid-template-columns: 1fr 1fr; gap: 32px 18px; }
+      .step { margin-right: 0; padding-right: 5px; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .resource-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .resource-link { padding: 14px; min-height: 125px; }
+      .offer { padding: 66px 0; }
+      .offer-card { grid-template-columns: 1fr; gap: 24px; padding: 23px; }
+      .whats-grid { grid-template-columns: 1fr; gap: 9px; }
+      .whats-item { min-height: 0; padding: 13px 14px; }
+      .offer-panel { padding: 22px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *:before, *:after { scroll-behavior: auto !important; transition: none !important; } }
+
+    /* mYo mining headstick: sticky top identity bar + illustrative live indicator */
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(6,27,23,.94);border-bottom:1px solid rgba(245,200,76,.2);box-shadow:0 8px 30px rgba(0,0,0,.18);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px)}
+    .headstick{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brandlockup{display:flex;align-items:center;gap:16px;min-width:0}
+    .project-name{display:flex;flex-direction:column;gap:3px;min-width:0;line-height:1.1}
+    .project-name strong{color:#fffdf7;font-family:'Manrope',sans-serif;font-size:13px;font-weight:900;letter-spacing:.06em;white-space:nowrap}
+    .project-name span{color:var(--gold-light);font-size:9px;font-weight:800;letter-spacing:.2em}
+    .headstick-live{display:flex;align-items:center;gap:9px;flex:0 0 auto;padding:11px 17px;border:1px solid rgba(245,200,76,.28);border-radius:999px;background:rgba(255,255,255,.07);color:#fff;font-size:12px;font-weight:950;letter-spacing:.08em;white-space:nowrap;box-shadow:0 7px 20px rgba(0,0,0,.12)}
+    .live-dot{width:9px;height:9px;display:inline-block;flex:0 0 9px;border-radius:50%;background:#e15e66;box-shadow:0 0 0 0 rgba(225,94,102,.48);animation:livePulse 1.8s ease-out infinite}
+    @keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(225,94,102,.48);transform:scale(.94)}65%{box-shadow:0 0 0 8px rgba(225,94,102,0);transform:scale(1)}100%{box-shadow:0 0 0 0 rgba(225,94,102,0);transform:scale(.94)}}
+    .live-count{display:inline-block;min-width:2ch;text-align:right;font-variant-numeric:tabular-nums;transition:opacity .25s ease,transform .25s ease}
+    .live-count.is-changing{opacity:.35;transform:translateY(-2px)}
+    @media(max-width:900px){.headstick{gap:12px}.headstick .nav-links{gap:13px;font-size:11px}.headstick .nav-links a:nth-child(3){display:none}}
+    @media(max-width:680px){.headstick{min-height:66px;gap:8px}.brandlockup{gap:10px}.brand{font-size:29px}.project-name strong{font-size:10px;letter-spacing:.035em}.project-name span{font-size:8px;letter-spacing:.13em}.headstick .nav-links{display:none}.headstick-live{padding:9px 12px;gap:7px;font-size:10px}}
+    @media(max-width:380px){.project-name strong{font-size:9px}.project-name span{font-size:7px}.headstick-live{padding:8px 9px;font-size:9px;gap:6px}}
+
+    /* Continuous feature-badge belt adapted to the mining kit (not certification seals). */
+    .mining-trust-seals{width:100%;overflow:hidden;margin:0 auto 20px;padding:7px 0 12px;position:relative;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+    .mining-trust-track{display:flex;align-items:center;width:max-content;animation:miningSealScroll 27s linear infinite;will-change:transform}
+    .mining-trust-group{display:flex;align-items:center;gap:25px;flex:0 0 auto;padding-right:25px}
+    .feature-seal{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-width:94px;color:#e8eee8;text-align:center;font-size:10px;font-weight:800;line-height:1.25;letter-spacing:.04em;text-transform:uppercase}
+    .seal-medal{display:grid;place-items:center;width:66px;height:66px;border:2px solid #d6ad4d;border-radius:50%;background:radial-gradient(circle at 35% 25%,#315b46,#0c2a21 70%);box-shadow:0 0 0 5px rgba(245,200,76,.08),inset 0 0 0 3px rgba(255,229,154,.15),0 7px 20px rgba(0,0,0,.2);color:#ffe59a}
+    .seal-medal b{font-family:'Manrope',sans-serif;font-size:15px;font-weight:950;letter-spacing:-.04em}
+    .feature-seal:nth-child(2) .seal-medal b{font-size:12px}
+    .feature-seal:nth-child(4) .seal-medal b{font-size:22px}
+    .mining-trust-seals:hover .mining-trust-track{animation-play-state:paused}
+    @keyframes miningSealScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media(max-width:680px){.mining-trust-seals{margin-bottom:12px;padding:4px 0 9px}.mining-trust-group{gap:17px;padding-right:17px}.feature-seal{min-width:80px;font-size:9px}.seal-medal{width:56px;height:56px}.seal-medal b{font-size:13px}}
+
+    /* Truthful product-content proof strip: counts describe the kit, not sales or reviews. */
+    .career-proof-strip{max-width:900px;width:100%;margin:0 auto 24px;padding:17px 13px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:13px 20px;border:1px solid rgba(245,200,76,.32);border-radius:17px;background:linear-gradient(135deg,#fffdf8,#f6edd6);box-shadow:0 9px 25px rgba(0,0,0,.12),inset 0 1px 0 #fff;color:#142b20;text-align:center}
+    .career-proof-item{display:inline-flex;align-items:center;gap:9px}
+    .career-proof-item strong{color:#9c7118;font-family:'Manrope',sans-serif;font-size:26px;line-height:1;font-weight:950;letter-spacing:-.05em}
+    .career-proof-item span{font-size:10px;font-weight:900;line-height:1.25;letter-spacing:.06em;text-transform:uppercase;text-align:left}
+    .career-proof-strip>i{width:1px;height:30px;background:rgba(156,113,24,.3)}
+    @media(max-width:560px){.career-proof-strip{width:calc(100% + 2px);gap:11px 13px;padding:14px 8px;margin-bottom:19px}.career-proof-item{gap:6px}.career-proof-item strong{font-size:22px}.career-proof-item span{font-size:8px}.career-proof-strip>i{height:24px}}
+
+    /* Refined offer order and CTA motion */
+    .offer-card{grid-template-columns:1fr;gap:25px}
+    .offer-panel{grid-column:1/-1;max-width:560px;width:100%;justify-self:center;padding:30px}
+    .offer-panel .btn{position:relative;isolation:isolate;overflow:hidden;animation:offerCtaBreathe 4.8s ease-in-out infinite}
+    .offer-panel .btn:after{content:"";position:absolute;top:-60%;left:-45%;width:32%;height:220%;transform:translateX(-180%) rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);pointer-events:none;animation:offerCtaShimmer 6.5s ease-in-out infinite}
+    @keyframes offerCtaBreathe{0%,100%{box-shadow:0 10px 30px rgba(228,178,54,.18)}50%{box-shadow:0 16px 38px rgba(228,178,54,.4)}}
+    @keyframes offerCtaShimmer{0%,55%{transform:translateX(-180%) rotate(22deg)}82%,100%{transform:translateX(520%) rotate(22deg)}}
+    .offer-panel h3{font-size:clamp(25px,3vw,32px)}
+
+    /* Scroll-triggered title and text reveals, following the reference page's motion language. */
+    @keyframes myoTextRise{0%{opacity:0;transform:translate3d(0,26px,0) scale(.985);filter:blur(4px)}70%{opacity:1;transform:translate3d(0,-2px,0) scale(1.002);filter:blur(0)}100%{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}}
+    @keyframes myoGoldSweep{0%{background-position:110% 0}100%{background-position:-110% 0}}
+    @keyframes myoUnderlineDraw{0%{transform:translateX(-50%) scaleX(0)}100%{transform:translateX(-50%) scaleX(1)}}
+    html.myo-motion-ready [data-reveal]{opacity:0;will-change:transform,opacity,filter}
+    html.myo-motion-ready [data-reveal].reveal-visible{animation:myoTextRise .82s cubic-bezier(.18,.78,.22,1) both;animation-delay:var(--reveal-delay,0ms)}
+    html.myo-motion-ready [data-title]{opacity:0;will-change:transform,opacity,filter}
+    html.myo-motion-ready [data-title].title-visible{animation:myoTextRise .95s cubic-bezier(.18,.78,.22,1) both;animation-delay:var(--title-delay,0ms)}
+    .section-heading h2{position:relative;padding-bottom:14px}
+    .section-heading h2:after{content:"";position:absolute;left:50%;bottom:0;width:88px;height:4px;border-radius:99px;background:linear-gradient(90deg,#a97818,var(--gold-light),#fff0bb,var(--gold));transform:translateX(-50%) scaleX(0);transform-origin:center;box-shadow:0 2px 13px rgba(245,200,76,.3)}
+    .section-heading h2.title-visible:after{animation:myoUnderlineDraw .85s cubic-bezier(.2,.75,.2,1) .4s both}
+    .section-heading h2 .gold-text{background:linear-gradient(105deg,var(--gold) 0%,#fff1b9 24%,#fffdf0 38%,var(--gold) 58%,#b9851d 78%,var(--gold-light) 100%);background-size:250% 100%;background-position:110% 0;-webkit-background-clip:text;background-clip:text;color:transparent}
+    .section-heading h2.title-visible .gold-text{animation:myoGoldSweep 2s ease-in-out .35s 1 both}
+    .area-card,.guide-card,.inside-card,.step,.audience-item,.resource-link,.whats-item,.faq details{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+    .area-card:hover,.guide-card:hover,.inside-card:hover,.resource-link:hover{transform:translateY(-4px);box-shadow:0 17px 35px rgba(0,0,0,.13);border-color:rgba(245,200,76,.45)}
+    .faq details[open]{border-color:rgba(156,113,24,.5);box-shadow:0 10px 26px rgba(0,0,0,.08)}
+    @media(hover:none){.area-card:hover,.guide-card:hover,.inside-card:hover,.resource-link:hover{transform:none}}
+    @media(prefers-reduced-motion:reduce){
+      .live-dot,.mining-trust-track,.offer-panel .btn,.offer-panel .btn:after{animation:none!important}
+      .mining-trust-seals{mask-image:none;-webkit-mask-image:none}
+      html.myo-motion-ready [data-reveal],html.myo-motion-ready [data-title]{opacity:1!important;animation:none!important;filter:none!important;transform:none!important}
+      .section-heading h2:after{transform:translateX(-50%) scaleX(1);animation:none!important}
+      .section-heading h2 .gold-text{background:none;color:var(--gold)}
+    }
+
+  
+    /* Exact mYo trust seals transferred from the supplied reference index. */
+    .exact-myo-seals{width:100%;overflow:hidden;margin:0 auto 20px;padding:7px 0 12px;position:relative;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+    .exact-myo-seals .mining-trust-track{display:flex;align-items:center;width:max-content;animation:miningSealScroll 24s linear infinite;will-change:transform}
+    .exact-myo-seals .mining-trust-group{display:flex;align-items:center;gap:14px;flex:0 0 auto;padding-right:14px}
+    .exact-myo-seals img{display:block;width:54px;height:54px;flex:0 0 54px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 3px 6px rgba(0,0,0,.13));transition:transform .25s ease,filter .25s ease}
+    .exact-myo-seals img:hover{transform:scale(1.09);filter:drop-shadow(0 5px 9px rgba(201,154,50,.32))}
+    .exact-myo-seals:hover .mining-trust-track{animation-play-state:paused}
+    .mining-social-proof{max-width:900px;margin:16px auto 8px;padding:15px 13px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px 14px;border:1px solid rgba(245,200,76,.38);border-radius:16px;background:linear-gradient(135deg,#fffdf8,#f7edd5);box-shadow:0 9px 25px rgba(0,0,0,.075),inset 0 1px 0 #fff;color:#123b2b;font-size:clamp(12px,2.5vw,15px);line-height:1.4;text-align:center}
+    .mining-social-item{display:inline-flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap}
+    .mining-social-item strong{font-weight:950;color:#123b2b}
+    .mining-social-separator{color:#b79b5e}
+    .mining-social-stars{color:#c79626;letter-spacing:.05em;font-size:1.12em;white-space:nowrap}
+    .mining-proof-disclosure{margin:0 auto 8px;color:#7a8179;font-size:10px;line-height:1.45;text-align:center}
+    @media(max-width:560px){
+      .exact-myo-seals{margin-bottom:12px;padding:4px 0 9px}
+      .exact-myo-seals .mining-trust-group{gap:10px;padding-right:10px}
+      .exact-myo-seals img{width:46px;height:46px;flex-basis:46px}
+      .mining-social-proof{margin:13px auto 7px;padding:13px 8px;gap:7px 9px;font-size:11px}
+      .mining-social-separator{display:none}
+      .mining-proof-disclosure{font-size:9px;padding:0 5px}
+    }
+    @media(prefers-reduced-motion:reduce){.exact-myo-seals .mining-trust-track{animation:none!important}.exact-myo-seals{mask-image:none;-webkit-mask-image:none}}
+
+  
+    /* Six illustrative mining-career feedback previews: one card visible at a time. */
+    .mining-feedback-window{width:100%;height:148px;overflow:hidden;position:relative;margin:14px auto 18px;max-width:100%;border-radius:16px}
+    .mining-feedback-track{display:flex;flex-direction:column;gap:0;animation:miningFeedbackMarquee 72s linear infinite;will-change:transform}
+    .mining-feedback-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;width:100%;flex:0 0 auto}
+    .mining-feedback-card{display:flex;align-items:center;gap:11px;min-width:0;height:140px;min-height:140px;padding:11px 12px;border:1px solid rgba(13,36,27,.12);border-radius:15px;background:#fffdf8;box-shadow:0 5px 15px rgba(13,36,27,.06);overflow:hidden}
+    .mining-feedback-avatar{width:56px;height:56px;flex:0 0 56px;border-radius:50%;object-fit:cover;border:2px solid #f0dfb5;box-shadow:0 2px 8px rgba(13,36,27,.12)}
+    .mining-feedback-content{min-width:0;flex:1}
+    .mining-feedback-name{display:inline-flex;align-items:center;gap:5px;margin:0;color:#123b2c;font-size:13px;font-weight:950;line-height:1.2}
+    .mining-feedback-badge{display:block;width:18px;height:18px;flex:0 0 18px;object-fit:contain}
+    .mining-feedback-topic{display:table;margin:5px 0 6px;padding:3px 7px;border-radius:999px;background:#f5efdf;color:#80601e;font-size:9px;font-weight:900;line-height:1.3}
+    .mining-feedback-quote{margin:0;color:#4d574f;font-size:12px;line-height:1.42}
+    .mining-feedback-disclosure{margin:0 auto 10px;max-width:540px;color:#7a817b;font-size:9px;line-height:1.45;text-align:center}
+    @keyframes miningFeedbackMarquee{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+    .mining-feedback-window:hover .mining-feedback-track{animation-play-state:paused}
+    @media(max-width:560px){
+      .mining-feedback-window{height:142px;margin:12px auto 14px}
+      .mining-feedback-card{height:134px;min-height:134px;padding:9px 10px;gap:9px}
+      .mining-feedback-avatar{width:49px;height:49px;flex-basis:49px}
+      .mining-feedback-quote{font-size:11px;line-height:1.4}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .mining-feedback-window{height:auto;overflow:visible}
+      .mining-feedback-track{animation:none!important}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="topline">A practical career resource for South Africa's mining sector</div>
+  <header class="site-header">
+    <div class="wrap nav headstick">
+      <div class="brandlockup">
+        <a class="brand" href="#top" aria-label="mYo home"><span>mYo</span></a>
+        <div class="project-name">
+          <strong>THE MINING CAREER KIT</strong>
+          <span>SOUTH AFRICA EDITION</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#career-paths">Career paths</a>
+        <a href="#inside">What's inside</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQs</a>
+      </nav>
+      <div class="headstick-live" aria-label="Illustrative live activity indicator">
+        <span class="live-dot" aria-hidden="true"></span>
+        <strong class="live-count" id="liveCount">19</strong>
+        <span>LIVE*</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-image" aria-label="mYo The Mining Career Kit — South Africa Edition">
+      <img src="assets/mining-career-kit-hero.webp" alt="mYo The Mining Career Kit 3-in-1 bundle: Gold, Platinum and Diamond Mining Careers" fetchpriority="high" />
+    </section>
+
+    <div class="stat-strip">
+      <div class="wrap stats">
+        <div class="stat"><div class="stat-num">03</div><div class="stat-label">Sector-focused<br/>career guides</div></div>
+        <div class="stat"><div class="stat-num">06</div><div class="stat-label">Core areas of the<br/>mining industry</div></div>
+        <div class="stat"><div class="stat-num">01</div><div class="stat-label">Practical starting point<br/>for your career research</div></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap intro-grid">
+        <div>
+          <div class="eyebrow">A clearer way to begin</div>
+          <h2>Don't let the industry feel like a <span class="gold-text">closed door.</span></h2>
+        </div>
+        <div>
+          <p class="lead">You may know that mining creates opportunities. But knowing where you fit is a different challenge.</p>
+          <p class="subcopy">Which roles exist beyond the obvious ones? What does each job involve? Which skills or qualifications may be required? Where can you check training options and genuine vacancies?</p>
+          <div class="intro-aside"><strong>The Mining Career Kit brings the starting information together.</strong> It helps you compare pathways, understand the language of the sector and decide what to investigate next — instead of searching without a plan.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section areas" id="career-paths">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Explore six key career areas</div>
+          <h2>There is more than one way to build a future in mining.</h2>
+          <p class="subcopy">From underground operations to technical and support roles, discover the different functions that keep a mining operation moving.</p>
+        </div>
+        <div class="area-grid">
+          <article class="area-card">
+            <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20v-7l7-6 7 6v7M9 20v-5h6v5M7 8l5-4 5 4"/></svg></div>
+            <h3>Underground Mining</h3>
+            <p>Explore underground operations, mining teams, production activities and the responsibilities involved in working below the surface.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M3 18h18M5 18l2-5h7l3 5M8 13V8h5l3 5M17 7h3v4h-3M5 18v2M19 18v2"/><circle cx="8" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></div>
+            <h3>Heavy Machinery Operation</h3>
+            <p>Learn about equipment-focused pathways involving mining trucks, loaders, excavators and other heavy-duty machinery.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M14 6a5 5 0 0 0-6.6 6.6L3 17l4 4 4.4-4.4A5 5 0 0 0 18 10l-3 3-4-4 3-3Z"/><path d="m16 4 4 4"/></svg></div>
+            <h3>Diesel Mechanics</h3>
+            <p>Understand maintenance and repair pathways for diesel-powered vehicles, mobile equipment and industrial machinery.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6M8 10h.01M16 10h.01"/><path d="M12 4V2"/></svg></div>
+            <h3>Mining Engineering</h3>
+            <p>Explore technical and planning roles connected to mine design, production, engineering systems and operational performance.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 17h14M7 17V9h10v8M9 9V5h6v4M4 5h16M8 13h.01M12 13h.01M16 13h.01"/></svg></div>
+            <h3>Mineral Processing</h3>
+            <p>Discover plant and processing pathways that help separate, recover and prepare minerals after extraction.</p>
+          </article>
+          <article class="area-card">
+            <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg></div>
+            <h3>Health &amp; Safety</h3>
+            <p>Understand safety-focused roles, risk awareness, workplace procedures and the importance of protecting people at work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section guides">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">One complete bundle</div>
+          <h2>Three mining sectors.<br/><span class="gold-text">One connected career toolkit.</span></h2>
+          <p class="subcopy">Each guide focuses on a major mining sector, helping you explore the career landscape through a more specific lens.</p>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-card guide-gold"><div class="guide-number">Guide 01 / Gold</div><h3>Gold Mining Careers</h3><p>Explore roles and career pathways connected to gold mining operations.</p><div class="guide-foot">Roles · Skills · Pathways</div></article>
+          <article class="guide-card guide-platinum"><div class="guide-number">Guide 02 / Platinum</div><h3>Platinum Mining Careers</h3><p>Discover the people, technical functions and opportunities behind platinum mining.</p><div class="guide-foot">Roles · Skills · Pathways</div></article>
+          <article class="guide-card guide-diamond"><div class="guide-number">Guide 03 / Diamond</div><h3>Diamond Mining Careers</h3><p>Understand career options and work areas across diamond mining operations.</p><div class="guide-foot">Roles · Skills · Pathways</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inside" id="inside">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Built for practical research</div>
+          <h2>Know what to look for — and what to do next.</h2>
+          <p class="subcopy">The kit is designed to turn a broad interest in mining into a more organised career research plan.</p>
+        </div>
+        <div class="inside-grid">
+          <article class="inside-card"><div class="mini">01 / Career clarity</div><h3>Job roles &amp; responsibilities</h3><p>Understand what different roles do, where they fit in an operation and how the work may differ from one pathway to another.</p></article>
+          <article class="inside-card"><div class="mini">02 / Skills</div><h3>Skills &amp; work readiness</h3><p>Identify the technical, practical and workplace capabilities commonly associated with different mining functions.</p></article>
+          <article class="inside-card"><div class="mini">03 / Requirements</div><h3>Qualifications &amp; training routes</h3><p>Learn what to investigate when comparing certificates, occupational programmes, technical studies and other requirements.</p></article>
+          <article class="inside-card"><div class="mini">04 / Preparation</div><h3>CV &amp; application preparation</h3><p>Approach your job search with a clearer understanding of how to present relevant experience, skills and training.</p></article>
+          <article class="inside-card"><div class="mini">05 / Job search</div><h3>Where to look for opportunities</h3><p>Use employer career pages and recognised sources to check vacancies and application instructions directly.</p></article>
+          <article class="inside-card"><div class="mini">06 / Next steps</div><h3>A more focused action plan</h3><p>Compare possible routes, identify information gaps and decide which steps make sense for your current situation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps" id="how-it-works">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">From interest to action</div>
+          <h2>Make your next move with a plan.</h2>
+          <p class="subcopy">Use the kit as a starting point for informed career research — at your own pace.</p>
+        </div>
+        <div class="step-grid">
+          <article class="step"><div class="step-num">1</div><h3>Explore</h3><p>Compare the three sector guides and identify the work areas that interest you.</p></article>
+          <article class="step"><div class="step-num">2</div><h3>Understand</h3><p>Review role descriptions, skill areas and the types of qualifications to investigate.</p></article>
+          <article class="step"><div class="step-num">3</div><h3>Prepare</h3><p>Check requirements with relevant institutions and employers. Build your next-step checklist.</p></article>
+          <article class="step"><div class="step-num">4</div><h3>Take action</h3><p>Prepare your application and monitor official employer channels for suitable opportunities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section audience">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Who is it for?</div>
+          <h2>For people ready to take their interest in mining seriously.</h2>
+          <p class="subcopy">Whether you are exploring the sector for the first time or considering a change, begin with a better understanding of the landscape.</p>
+        </div>
+        <div class="audience-grid">
+          <div class="audience-item"><i class="check">✓</i><span><strong>First-time job seekers</strong><span>Explore the range of roles before deciding which direction to pursue.</span></span></div>
+          <div class="audience-item"><i class="check">✓</i><span><strong>People considering a career change</strong><span>Compare technical, operational and support pathways within mining.</span></span></div>
+          <div class="audience-item"><i class="check">✓</i><span><strong>Students and training applicants</strong><span>Research possible career destinations before choosing what to study.</span></span></div>
+          <div class="audience-item"><i class="check">✓</i><span><strong>Workers looking to progress</strong><span>Identify adjacent roles, skills and further training to investigate.</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resources">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Check the right sources</div>
+          <h2>Use trusted sources for your next step.</h2>
+          <p class="subcopy">Career requirements and vacancies change. Always verify qualifications, application instructions and open positions directly with the relevant organisation.</p>
+        </div>
+        <div class="resource-grid">
+          <a class="resource-link" href="https://mqa.org.za/wp-content/uploads/2026/05/Status-of-Registered-Occupational-Qualifications-and-Skills-Programmes-08-May-2026-004.pdf" target="_blank" rel="noopener"><strong>MQA Qualification Register</strong><span>Registered occupational qualifications and skills programmes</span><b>↗</b></a>
+          <a class="resource-link" href="https://www.goldfields-southdeep.co.za/careers/" target="_blank" rel="noopener"><strong>Gold Fields — South Deep</strong><span>Official careers and opportunity information</span><b>↗</b></a>
+          <a class="resource-link" href="https://www.glencore.com/en/careers/africa" target="_blank" rel="noopener"><strong>Glencore — Africa Careers</strong><span>Roles and recruitment information across Africa</span><b>↗</b></a>
+          <a class="resource-link" href="https://www.debeersgroup.com/en/careers/current-vacancies.html" target="_blank" rel="noopener"><strong>De Beers Group</strong><span>Current vacancies and career pathways</span><b>↗</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <div class="wrap">
+        <div class="mining-trust-seals exact-myo-seals" aria-label="mYo trust and support seals">
+  <div class="mining-trust-track">
+    <div class="mining-trust-group"><img src="assets/myo-trust-seal-1.png" alt="Made in South Africa" loading="eager"><img src="assets/myo-trust-seal-3.png" alt="mYo — Cuida, Nutre, Vive" loading="eager"><img src="assets/myo-trust-seal-4.png" alt="Portuguese-language support" loading="eager"></div>
+    <div class="mining-trust-group" aria-hidden="true"><img src="assets/myo-trust-seal-1.png" alt="Made in South Africa" loading="eager"><img src="assets/myo-trust-seal-3.png" alt="mYo — Cuida, Nutre, Vive" loading="eager"><img src="assets/myo-trust-seal-4.png" alt="Portuguese-language support" loading="eager"></div>
+  </div>
+</div>
+        </div>
+        <div class="offer-card">
+          <img class="offer-art" src="assets/mining-career-kit-offer.webp" alt="Complete mYo Mining Career Kit offer: three career guides and practical career-planning resources" loading="lazy" />
+          <section class="whats-inside" aria-labelledby="whats-inside-title">
+            <div class="eyebrow">Inside your career clarity package</div>
+            <h2 id="whats-inside-title">What’s <span class="gold-text">Inside?</span></h2>
+            <div class="whats-grid">
+              <div class="whats-item"><i class="check">✓</i><span>Three Career Guides: Gold, Platinum and Diamond</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Six Major Professional Areas in the Mining Industry</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Job Role Explanations and Entry Pathways</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Qualifications, MQA, SAQA and QCTO</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Technical Training, Apprenticeships and Learnerships</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Mine Health and Safety</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Official Recruitment Portals</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>CV and Cover Letter Preparation</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Interview Preparation</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Protection Against Fake Job Offers</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Guidance for Foreign Applicants</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>30-Day Action Plan</span></div>
+              <div class="whats-item"><i class="check">✓</i><span>Practical Worksheets and Clickable Official References</span></div>
+            </div>
+          </section>
+          <div class="offer-panel">
+            <div class="tag">mYo digital career toolkit</div>
+            <div class="mining-social-proof" aria-label="Illustrative purchase and review indicators">
+  <span class="mining-social-item"><strong>+ 1000</strong> purchased</span>
+  <span class="mining-social-separator" aria-hidden="true">|</span>
+  <span class="mining-social-item"><span class="mining-social-stars" aria-label="4.5 out of 5 stars">★★★★☆</span> <strong>4.5/5</strong></span>
+  <span class="mining-social-separator" aria-hidden="true">|</span>
+  <span class="mining-social-item"><strong>597</strong> reviews</span>
+</div>
+
+            <section class="mining-feedback" aria-label="Six illustrative mining career feedback previews">
+              <div class="mining-feedback-window">
+                <div class="mining-feedback-track">
+                  <div class="mining-feedback-grid">
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-01.webp" alt="Illustrative profile portrait" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Naledi M.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Career pathways</span>
+                  <p class="mining-feedback-quote">“The role breakdown helped me compare different mining careers and understand the entry routes I need to research.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-02.webp" alt="Illustrative profile portrait" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Thabo K.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Training routes</span>
+                  <p class="mining-feedback-quote">“The sections on learnerships, apprenticeships and technical training made the different pathways easier to understand.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-03.webp" alt="Illustrative profile portrait" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Zanele P.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Qualifications</span>
+                  <p class="mining-feedback-quote">“I can now organise my research around the skills and qualifications that employers may ask for in each role.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-04.webp" alt="Illustrative profile portrait" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Sipho D.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">CV and interviews</span>
+                  <p class="mining-feedback-quote">“The CV and interview preparation sections give me a clearer checklist to work through before applying.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-05.webp" alt="Illustrative profile portrait" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Lerato N.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Foreign applicants</span>
+                  <p class="mining-feedback-quote">“The guidance for foreign applicants points me to the work-authorisation details I need to verify before applying.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-06.webp" alt="Illustrative profile portrait" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Musa T.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Job-search safety</span>
+                  <p class="mining-feedback-quote">“The official recruitment and fake-offer guidance reminds me to check vacancies directly with employers.”</p>
+                </div>
+              </article>
+                  </div>
+                  <div class="mining-feedback-grid" aria-hidden="true">
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-01.webp" alt="" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Naledi M.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Career pathways</span>
+                  <p class="mining-feedback-quote">“The role breakdown helped me compare different mining careers and understand the entry routes I need to research.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-02.webp" alt="" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Thabo K.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Training routes</span>
+                  <p class="mining-feedback-quote">“The sections on learnerships, apprenticeships and technical training made the different pathways easier to understand.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-03.webp" alt="" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Zanele P.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Qualifications</span>
+                  <p class="mining-feedback-quote">“I can now organise my research around the skills and qualifications that employers may ask for in each role.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-04.webp" alt="" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Sipho D.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">CV and interviews</span>
+                  <p class="mining-feedback-quote">“The CV and interview preparation sections give me a clearer checklist to work through before applying.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-05.webp" alt="" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Lerato N.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Foreign applicants</span>
+                  <p class="mining-feedback-quote">“The guidance for foreign applicants points me to the work-authorisation details I need to verify before applying.”</p>
+                </div>
+              </article>
+              <article class="mining-feedback-card">
+                <img class="mining-feedback-avatar" src="assets/mining-feedback-06.webp" alt="" loading="lazy">
+                <div class="mining-feedback-content">
+                  <span class="mining-feedback-name">Musa T.<img class="mining-feedback-badge" src="assets/verified-blue-badge.png" alt="" aria-hidden="true"></span>
+                  <span class="mining-feedback-topic">Job-search safety</span>
+                  <p class="mining-feedback-quote">“The official recruitment and fake-offer guidance reminds me to check vacancies directly with employers.”</p>
+                </div>
+              </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <a class="btn btn-primary checkout-link" href="#offer">Get the Mining Career Kit — R249 <span class="btn-arrow">→</span></a>
+            <div class="secure-note">Career clarity starts with a practical next step.</div>
+          </div>
+          
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Frequently asked questions</div>
+          <h2>Good to know before you begin.</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>Does the Mining Career Kit guarantee me a job?</summary><p>No. The kit is an educational career guide. It helps you understand roles and prepare your research, but employment depends on vacancies, employer criteria, qualifications, experience, work authorisation and each applicant's circumstances.</p></details>
+          <details><summary>Does the kit provide an accredited mining qualification?</summary><p>No. It is an independent information resource, not an accredited course, certificate, licence or formal training programme. Always confirm official qualification and training requirements with the relevant institution or authority.</p></details>
+          <details><summary>Do I need a university degree to work in mining?</summary><p>Not every mining occupation follows the same route. Requirements vary by role and employer; some positions require degrees, while others may follow occupational, technical, artisan or workplace-training pathways. Check the current requirements for the specific role you are considering.</p></details>
+          <details><summary>Is the kit only about underground mining?</summary><p>No. It introduces six areas: underground mining, heavy machinery operation, diesel mechanics, mining engineering, mineral processing, and health and safety.</p></details>
+          <details><summary>Will it show me where to find real vacancies?</summary><p>The kit points you towards a more organised job-search process. Use official employer career pages and follow the application instructions on each vacancy. Never pay an individual who promises to secure a mining job or interview for you.</p></details>
+          <details><summary>Is this an official product of a mining company or the MQA?</summary><p>No. The mYo Mining Career Kit is an independent educational resource and is not affiliated with, endorsed by or issued by the Mining Qualifications Authority, SAQA or any mining employer.</p></details>
+          <details><summary>Transparency note</summary><p>The LIVE activity indicator in the header is a simulated visual display and does not show verified real-time visitors. The animated feature badges are package highlights only; they are not accreditation seals, official approvals or endorsements. The numbers shown near the offer (3 career guides, 6 mining career areas, 13 practical inclusions and a 30-day action plan) describe the product contents, not customer purchases or reviews. The six profile-and-feedback previews near the offer are illustrative examples, not verified customer testimonials or endorsements. No customer purchase count, star rating or testimonial is presented as verified social proof. The mYo Mining Career Kit is an independent educational resource and does not guarantee employment.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <div class="disclaimer">
+      <div class="wrap">Important: This product provides general educational information and career research guidance. It does not provide recruitment, job placement, professional licensing, accredited training or a guarantee of employment. The LIVE* activity indicator is simulated, and the feature badges are package highlights only; neither represents independent verification, accreditation or endorsement. Product figures refer to the contents of this kit, not customer purchases or ratings. Qualifications, legal requirements, vacancies and employer processes may change. Verify all details directly with official authorities, training providers and employers before making decisions. Never pay unofficial intermediaries for a promised job or interview.</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div><div class="footer-brand">mYo</div><div>Explore. Prepare. Move forward.</div></div>
+      <div class="footer-links"><a href="#career-paths">Career paths</a><a href="#inside">What's inside</a><a href="#faq">FAQs</a><a href="#top">Back to top ↑</a></div>
+      <div>© <span id="year"></span> mYo. All rights reserved.</div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Illustrative live-activity animation only; it is not connected to real visitor analytics.
+    (() => {
+      const counter = document.getElementById('liveCount');
+      if (!counter || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      let current = 19;
+      const update = () => {
+        const roll = Math.random();
+        let change = roll < 0.68 ? (Math.random() < 0.5 ? -1 : 1) : (Math.random() < 0.5 ? -2 : 2);
+        if (current <= 17 && change < 0) change = 1;
+        if (current >= 25 && change > 0) change = -1;
+        const next = Math.max(17, Math.min(25, current + change));
+        counter.classList.add('is-changing');
+        window.setTimeout(() => {
+          current = next;
+          counter.textContent = String(current);
+          counter.classList.remove('is-changing');
+        }, 260);
+        window.setTimeout(update, 4200 + Math.random() * 2600);
+      };
+      window.setTimeout(update, 4800);
+    })();
+  </script>
+
+  <script>
+    // mYo scroll motion: animate headlines and supporting copy as each section enters view.
+    (() => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      const revealSelector = '.section-heading .eyebrow, .section-heading h2, .section-heading p, .intro-grid h2, .intro-grid .lead, .intro-grid .subcopy, .intro-aside, .area-card, .guide-card, .inside-card, .step, .audience-item, .resource-link, .mining-trust-seals, .offer-art, .offer-panel, .career-proof-strip, .whats-inside .eyebrow, .whats-inside h2, .whats-item, .faq details, .disclaimer';
+      const targets = Array.from(document.querySelectorAll(revealSelector));
+      if (!targets.length) return;
+      targets.forEach((el, index) => {
+        el.setAttribute('data-reveal', '');
+        if (/^H[1-3]$/.test(el.tagName)) {
+          el.setAttribute('data-title', '');
+          const siblings = Array.from(el.parentElement.querySelectorAll(':scope > h1, :scope > h2, :scope > h3'));
+          el.style.setProperty('--title-delay', `${Math.max(0, siblings.indexOf(el)) * 110}ms`);
+        } else {
+          el.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 65}ms`);
+        }
+      });
+      document.documentElement.classList.add('myo-motion-ready');
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(el => el.classList.add(el.hasAttribute('data-title') ? 'title-visible' : 'reveal-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(entry.target.hasAttribute('data-title') ? 'title-visible' : 'reveal-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -7% 0px' });
+      targets.forEach(el => observer.observe(el));
+    })();
+  </script>
+
+  <script>
+    // Add the live checkout URL here before publishing.
+    const CHECKOUT_URL = "";
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.checkout-link').forEach((link) => {
+      if (CHECKOUT_URL.trim()) {
+        link.href = CHECKOUT_URL.trim();
+        link.target = '_blank';
+        link.rel = 'noopener';
+      }
+    });
+  </script>
+</body>
+</html>
